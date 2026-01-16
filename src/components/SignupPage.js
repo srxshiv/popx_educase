@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./SignupPage.css";
 
 const SignupPage = () => {
   const navigate = useNavigate();
@@ -38,12 +37,12 @@ const SignupPage = () => {
   };
 
   return (
-    <div className="signup-page-wrapper">
-      <div className="signup-container">
-        <h2>Create your </h2>
-        <h3>PopX account</h3>
-        <form className="signup-form" onSubmit={handleSubmit}>
-          <label>Full Name*</label>
+    <div className="flex justify-center items-center h-screen p-5 bg-[#f7f7f7fb] box-border">
+      <div className="w-full max-w-[400px] bg-[rgba(243,242,242,0.964)] px-[25px] py-[30px] rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.1)] h-[97%] max-[480px]:px-5 max-[480px]:py-[25px] max-[480px]:rounded-none max-[480px]:shadow-none">
+        <h2 className="text-[34px] mb-0 font-bold text-[#222] leading-none max-[480px]:text-xl">Create your </h2>
+        <h3 className="text-[34px] mb-5 font-bold text-[#222] leading-[0.5] max-[480px]:text-xl">PopX account</h3>
+        <form className="flex flex-col" onSubmit={handleSubmit}>
+          <label className="text-[13px] text-[#6e44ff] font-medium mt-[15px] mb-1">Full Name*</label>
           <input
             type="text"
             placeholder="Name"
@@ -51,9 +50,10 @@ const SignupPage = () => {
             value={formData.fullName}
             onChange={handleChange}
             required
+            className="p-2.5 bg-transparent border border-[#dcdcdc] rounded-md text-sm outline-none text-black"
           />
 
-          <label>Phone number*</label>
+          <label className="text-[13px] text-[#6e44ff] font-medium mt-[15px] mb-1">Phone number*</label>
           <input
             type="text"
             placeholder="Phone number"
@@ -61,9 +61,10 @@ const SignupPage = () => {
             value={formData.phone}
             onChange={handleChange}
             required
+            className="p-2.5 bg-transparent border border-[#dcdcdc] rounded-md text-sm outline-none text-black"
           />
 
-          <label>Email address*</label>
+          <label className="text-[13px] text-[#6e44ff] font-medium mt-[15px] mb-1">Email address*</label>
           <input
             type="email"
             placeholder="Email"
@@ -71,9 +72,10 @@ const SignupPage = () => {
             value={formData.email}
             onChange={handleChange}
             required
+            className="p-2.5 bg-transparent border border-[#dcdcdc] rounded-md text-sm outline-none text-black"
           />
 
-          <label>Password *</label>
+          <label className="text-[13px] text-[#6e44ff] font-medium mt-[15px] mb-1">Password *</label>
           <input
             type="password"
             placeholder="Password"
@@ -81,20 +83,22 @@ const SignupPage = () => {
             value={formData.password}
             onChange={handleChange}
             required
+            className="p-2.5 bg-transparent border border-[#dcdcdc] rounded-md text-sm outline-none text-black"
           />
 
-          <label>Company name</label>
+          <label className="text-[13px] text-[#6e44ff] font-medium mt-[15px] mb-1">Company name</label>
           <input
             type="text"
             placeholder="Company"
             name="company"
             value={formData.company}
             onChange={handleChange}
+            className="p-2.5 bg-transparent border border-[#dcdcdc] rounded-md text-sm outline-none text-black"
           />
 
-          <p>Are you an Agency?*</p>
-          <div className="radio-group">
-            <label>
+          <p className="mt-5 text-sm font-medium">Are you an Agency?*</p>
+          <div className="flex flex-wrap gap-3 mt-2 mb-5">
+            <label className="text-sm flex items-center gap-1.5">
               <input
                 type="radio"
                 name="agency"
@@ -104,7 +108,7 @@ const SignupPage = () => {
               />{" "}
               Yes
             </label>
-            <label>
+            <label className="text-sm flex items-center gap-1.5">
               <input
                 type="radio"
                 name="agency"
@@ -116,7 +120,10 @@ const SignupPage = () => {
             </label>
           </div>
 
-          <button className="primary-btn" type="submit">
+          <button 
+            className="bg-[#6e44ff] text-white font-semibold border-none rounded-md py-3 px-3 cursor-pointer text-sm mt-[135px] transition-colors duration-300 hover:bg-[#5a34d2] max-[480px]:text-[13px] max-[480px]:py-2.5 max-[480px]:px-2.5"
+            type="submit"
+          >
             Create Account
           </button>
         </form>
